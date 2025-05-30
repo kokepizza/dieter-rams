@@ -10,12 +10,16 @@ export default function DarkModeToggle() {
 
   useEffect(() => {
     const root = document.documentElement;
+    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+    
     if (isDark) {
       root.classList.add('dark');
       localStorage.setItem('theme', 'dark');
+      metaThemeColor?.setAttribute('content', '#000000');
     } else {
       root.classList.remove('dark');
       localStorage.setItem('theme', 'light');
+      metaThemeColor?.setAttribute('content', '#000000');
     }
   }, [isDark]);
 
