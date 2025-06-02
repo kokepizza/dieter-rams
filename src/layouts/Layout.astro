@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Header from '../components/Header.astro';
+import Nav from '../components/Nav';
 
 const {
   title = "Dieter Rams",
@@ -27,6 +28,7 @@ const {
 
   <body>
     <Header />
+    <Nav client:load/>
     <main>
       <slot />
     </main>
