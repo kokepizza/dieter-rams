@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { awards } from "../data/awards";
 
 const pageTitle = "Dieter Rams - Awards";
 const pageDescription = "“Less, but better.” — The key principle of Dieter Rams, an advocate for functional, honest, and timeless design.";
@@ -7,4 +8,67 @@ const pageDescription = "“Less, but better.” — The key principle of Dieter
 
 <Layout title={pageTitle} description={pageDescription}>
 
+  <section class="awards-section">
+    <ul class="awards-list">
+      {awards.map((award) => (
+        <li class="award-item">
+          <h2 class="award-year">{award.year}</h2>
+          <p class="award-description">{award.description}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
 </Layout>
+
+<style is:inline>
+    .awards-section {
+        padding: 6rem 2rem;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .awards-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        border-left: 1px solid #ccc;
+    }
+
+    .award-item {
+        padding: 1.5rem 1rem;
+        margin-left: 1.5rem;
+        position: relative;
+    }
+
+    .award-item::before {
+        content: "";
+        position: absolute;
+        left: -1.9rem;
+        top: 2rem;
+        width: 12px;
+        height: 12px;
+        background-color: var(--text);
+        border-radius: 50%;
+    }
+
+    .award-year {
+        font-size: 1.25rem;
+        margin: 0 0 0.5rem;
+        color: var(--text);
+    }
+
+    .award-description {
+        color: var(--text);
+        opacity: 0.8;
+    }
+
+    @media (min-width: 768px) {
+        .award-year {
+            font-size: 1.5rem;
+        }
+        .award-description {
+            font-size: 1.1rem;
+        }
+    }
+</style>
