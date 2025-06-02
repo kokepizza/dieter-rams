@@ -25,7 +25,7 @@ export default function Navigation() {
 
   return (
     <div className="nav-container" ref={navRef}>
-      <a href="/products">Products</a>
+      <a href="/">Products</a>
       <a href="/awards">Awards</a>
       <a href="/bio">Bio</a>
       <div className="nav-handle">
