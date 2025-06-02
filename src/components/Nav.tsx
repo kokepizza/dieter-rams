@@ -5,7 +5,7 @@ export default function Navigation() {
   const navRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (window.innerWidth >= 1024 && navRef.current) {
+    if (navRef.current) {
       import('gsap/Draggable').then(({ default: Draggable }) => {
         import('gsap').then(({ default: gsap }) => {
           gsap.registerPlugin(Draggable);
@@ -15,6 +15,8 @@ export default function Navigation() {
             bounds: window,
             inertia: true,
             edgeResistance: 0.85,
+            dragClickables: true,
+            allowNativeTouchScrolling: false,
           });
         });
       });
