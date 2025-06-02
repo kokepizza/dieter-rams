@@ -19,7 +19,7 @@
 
 .nav-container a {
   font-weight: bold;
-  font-size: 1rem;
+  font-size: .75rem;
   transition: color 0.3s ease;
 }
 
@@ -29,14 +29,14 @@
 
 .nav-handle {
   display: grid;
-  grid-template-columns: repeat(2, 6px);
-  grid-template-rows: repeat(2, 6px);
-  gap: 4px;
+  grid-template-columns: repeat(2, 4px);
+  grid-template-rows: repeat(2, 4px);
+  gap: 3px;
 }
 
 .nav-handle span {
-  width: 6px;
-  height: 6px;
+  width: 4px;
+  height: 4px;
   background-color: var(--text);
   border-radius: 50%;
   display: block;
@@ -44,7 +44,22 @@
 }
 
 @media (min-width: 1024px) {
-  .nav-container {
-    cursor: default;
-  }
+    .nav-container {
+        cursor: default;
+    }
+
+    .nav-container a {
+        font-size: 1rem;
+    }
+
+    .nav-handle {
+        grid-template-columns: repeat(2, 6px);
+        grid-template-rows: repeat(2, 6px);
+        gap: 4px;
+    }
+
+    .nav-handle span {
+        width: 6px;
+        height: 6px;
+    }
 }
