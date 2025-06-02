@@ -2,7 +2,30 @@
 import ThemeToggle from './ThemeToggle';
 ---
 
-<header class="p-4 flex justify-between items-center">
-    <h1 class="text-xl font-bold">Dieter Rams</h1>
+<header>
+    <h1>Dieter Rams</h1>
     <ThemeToggle client:load />
 </header>
+
+<style is:inline>
+    header {
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header h1 {
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+
+    .theme-toggle {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        cursor: pointer;
+        background-color: var(--text);
+        transition: background-color 0.3s ease;
+    }
+</style>
