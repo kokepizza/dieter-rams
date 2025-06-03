@@ -1,0 +1,63 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+export interface Props {
+  name: string;
+  year: string;
+  images: ImageMetadata[];
+  slug: string;
+}
+
+const { name, year, images, slug } = Astro.props;
+---
+
+<style>
+    .project-card {
+        transition: opacity 0.3s ease;
+    }
+
+    .thumb-wrapper {
+        position: relative;
+        height: 300px;
+        display: flex;
+        align-items: flex-end;
+        overflow: hidden;
+    }
+
+    .thumb {
+        width: 100%;
+        max-height: 320px;
+        object-fit: cover;
+        border-radius: .25rem;
+        opacity: 0.1;
+        transition: opacity 0.3s ease;
+    }
+
+    .project-card:hover .thumb {
+        opacity: 1;
+    }
+
+    .meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: .75rem;
+        padding: .5rem 0;
+    }
+
+    p {
+        color: #aaa;
+    }
+
+</style>
+
+<a href={`/${slug}`} class="project-card">
+    <div class="thumb-wrapper">
+        <Image src={images[0]} alt={name} class="thumb" />
+    </div>
+    <div class="meta">
+        <h2>{name}</h2>
+        <p><strong>{year}</strong></p>
+    </div>
+</a>

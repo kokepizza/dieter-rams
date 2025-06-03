@@ -1,0 +1,39 @@
+---
+import { products } from "../data/products";
+import ProjectCard from "../components/ProjectCard.astro";
+---
+
+<style>
+  .projects-grid {
+    padding: 62px 1rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+
+  /* @media (min-width: 640px) {
+    .projects-grid {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .projects-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+  } */
+
+</style>
+
+<div class="projects-grid">
+  {products.map((product) => (
+    <ProjectCard
+      name={product.name}
+      year={product.year}
+      images={product.images}
+      slug={product.slug}
+    />
+  ))}
+</div>
