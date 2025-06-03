@@ -6,7 +6,7 @@ export default function Navigation() {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // ⚠️ Si no hay sesión iniciada, borramos la posición
+    // sessionStorage
     if (!sessionStorage.getItem('session-started')) {
       sessionStorage.setItem('session-started', 'true');
       localStorage.removeItem('nav-position');
@@ -20,7 +20,7 @@ export default function Navigation() {
       import('gsap/Draggable').then(({ default: Draggable }) => {
         gsap.registerPlugin(Draggable);
 
-        // Cargar posición guardada
+        // position saved
         const saved = localStorage.getItem('nav-position');
         let x = 0;
         let y = 0;
@@ -33,10 +33,6 @@ export default function Navigation() {
           } catch {
             console.warn('No se pudo parsear la posición del nav');
           }
-        } else {
-          // Centrar abajo por defecto
-          x = boundsEl.offsetWidth / 2 - el.offsetWidth / 2;
-          y = boundsEl.offsetHeight - el.offsetHeight - 32;
         }
 
         gsap.set(el, { x, y });

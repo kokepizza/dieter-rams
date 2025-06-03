@@ -1,14 +1,17 @@
 .nav-wrapper {
   position: fixed;
   inset: 0;
-  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
   z-index: 9999;
   pointer-events: none;
 }
 
 .nav-container {
   position: absolute;
-  transform: translate(0, 0);
+  left: 50%;
+  bottom: 2rem;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
   gap: 2rem;
