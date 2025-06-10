@@ -35,11 +35,12 @@ export default function Navigation() {
           }
         }
 
-        gsap.set(el, { x, y });
+        gsap.set(el, { xPercent: -50, x, y });
 
         Draggable.create(el, {
           type: 'x,y',
           bounds: boundsEl,
+          allowContextMenu: true,
           inertia: true,
           edgeResistance: 0.85,
           dragClickables: true,
