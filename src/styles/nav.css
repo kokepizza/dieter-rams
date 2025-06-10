@@ -22,9 +22,9 @@
   box-shadow: 0 0.25rem 2rem rgba(0, 0, 0, 0.1);
   cursor: grab;
   user-select: none;
-  -webkit-user-select: none;
-  pointer-events: auto;
   touch-action: none;
+  pointer-events: auto;
+  will-change: transform;
 }
 
 .nav-container a {
