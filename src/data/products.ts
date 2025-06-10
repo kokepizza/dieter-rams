@@ -71,6 +71,61 @@ import ts4502 from "../assets/ts45-2.avif";
 import ts4503 from "../assets/ts45-3.avif";
 import ts4504 from "../assets/ts45-4.avif";
 import ts4505 from "../assets/ts45-5.jpg";
+import t100001 from "../assets/t1000-01.jpg";
+import t100002 from "../assets/t1000-02.jpg";
+import t100003 from "../assets/t1000-03.jpg";
+import t100004 from "../assets/t1000-04.jpg";
+import t100005 from "../assets/t1000-05.jpg";
+import t100006 from "../assets/t1000-06.jpg";
+import d4701 from "../assets/d47-1.png";
+import d4702 from "../assets/d47-2.png";
+import d4703 from "../assets/d47-3.avif";
+import d4704 from "../assets/d47-4.avif";
+import d4705 from "../assets/d47-5.png";
+import cr301 from "../assets/cr3-1.jpg";
+import cr302 from "../assets/cr3-2.jpg";
+import cr303 from "../assets/cr3-3.jpg";
+import cr304 from "../assets/cr3-4.jpg";
+import cr305 from "../assets/cr3-5.jpg";
+import bc1701 from "../assets/bc17-1.png";
+import bc1702 from "../assets/bc17-2.jpg";
+import bc1703 from "../assets/bc17-3.jpg";
+import bc1704 from "../assets/bc17-4.jpg";
+import citro01 from "../assets/citro-1.avif";
+import citro02 from "../assets/citro-2.jpg";
+import citro03 from "../assets/citro-3.webp";
+import citro04 from "../assets/citro-4.jpg";
+import t401 from "../assets/t4-1.jpg";
+import t402 from "../assets/t4-2.jpg";
+import t403 from "../assets/t4-3.jpg";
+import t5201 from "../assets/t52-1.jpg";
+import t5202 from "../assets/t52-2.jpg";
+import t5203 from "../assets/t52-3.jpg";
+import t5204 from "../assets/t52-4.jpg";
+import t5205 from "../assets/t52-5.jpg";
+import t5206 from "../assets/t52-6.jpg";
+import hl7001 from "../assets/hl70-1.jpg";
+import hl7002 from "../assets/hl70-2.jpg";
+import hl7003 from "../assets/hl70-3.jpg";
+import hl7004 from "../assets/hl70-4.jpg";
+import ds101 from "../assets/ds1-1.jpg";
+import ds102 from "../assets/ds1-2.jpg";
+import ds103 from "../assets/ds1-3.jpg";
+import ds104 from "../assets/ds1-4.jpg";
+import ds105 from "../assets/ds1-5.jpg";
+import ds106 from "../assets/ds1-6.jpg";
+import ds107 from "../assets/ds1-7.jpg";
+import sk201 from "../assets/sk2-1.jpg";
+import sk202 from "../assets/sk2-2.jpg";
+import sk203 from "../assets/sk2-3.jpg";
+import sk204 from "../assets/sk2-4.jpg";
+import sk205 from "../assets/sk2-5.jpg";
+import sk206 from "../assets/sk2-6.jpg";
+import tonar01 from "../assets/tonar-1.jpg";
+import tonar02 from "../assets/tonar-2.jpg";
+import tonar03 from "../assets/tonar-3.jpg";
+import tonar04 from "../assets/tonar-4.jpg";
+import tonar05 from "../assets/tonar-5.jpg";
 
 type Product = {
     name: string;
@@ -172,4 +227,81 @@ export const products: Product[] = [
         images: [nizo01, nizo02, nizo03, nizo04, nizo05],
         slug: "nizo-s56-super8-camera"
     },
+    {
+        name: "T1000 World Receiver",
+        description: "Introduced in 1963 by Braun, the T1000 was a high-end portable world radio. Its compact metallic case and organized control panel made it a masterpiece of functionality and international usability. The symmetrical layout and technical precision reflect Rams’ obsession with clarity and order.",
+        year: "1963",
+        images: [t100001, t100002, t100003, t100004, t100005, t100006],
+        slug: "t1000-world-receiver"
+    },
+    {
+        name: "D-47 Slide Projector",
+        description: "Designed in 1962, the D-47 is a minimalist slide projector with an intuitive interface. With a compact form and clean, white body, it was a departure from the bulky designs of the time. It reinforced Rams’ belief that even technical devices should be beautiful.",
+        year: "1962",
+        images: [d4701, d4702, d4703, d4704, d4705],
+        slug: "d47-slide-projector"
+    },
+    {
+        name: "Aromatic CR3",
+        description: "Designed in 1979 for Braun, the Aromatic CR3 is a minimalist coffee grinder that emphasizes efficiency and clarity. With its compact cylindrical shape and intuitive interface, it reflects Rams’ idea that even small kitchen appliances should be thoughtfully designed and user-friendly.",
+        year: "1979",
+        images: [cr301, cr302, cr303, cr304, cr305],
+        slug: "aromatic-cr3"
+    },
+    {
+        name: "Clock BC17",
+        description: "The BC17 is a wall clock that embodies Rams’ approach to timekeeping: clear typography, minimal distraction, and precise functionality. While its release year is uncertain, its quiet design and bold readability made it a timeless piece in both homes and offices.",
+        year: "Unknown",
+        images: [bc1701, bc1702, bc1703, bc1704],
+        slug: "clock-bc17"
+    },
+    {
+        name: "Citromatic",
+        description: "Launched in 1975 by Braun, the Citromatic is an electric citrus juicer that simplifies daily rituals with functional elegance. Its clean form and ease of use make it a perfect example of Rams’ belief that good design makes a product understandable and useful.",
+        year: "1975",
+        images: [citro01, citro02, citro03, citro04],
+        slug: "citromatic"
+    },
+    {
+        name: "Table Lighter T4",
+        description: "Introduced in 1970, the T4 Table Lighter is a refined tabletop accessory designed with minimalist precision. Its cylindrical form and tactile finish offer a sculptural, almost architectural presence, elevating a common object to a thoughtful design statement.",
+        year: "1970",
+        images: [t401, t402, t403],
+        slug: "table-lighter-t4"
+    },
+    {
+        name: "Transistor T52",
+        description: "Released in 1964, the T52 is a compact plastic transistor radio featuring an adjustable metal handle. Its portability, intuitive layout, and tactile design show Rams’ sensitivity to user experience and his commitment to essential form.",
+        year: "1964",
+        images: [t5201, t5202, t5203, t5204, t5205, t5206],
+        slug: "transistor-t52"
+    },
+    {
+        name: "Fan HL70",
+        description: "The HL70, designed in 1971, is a vertical fan with an elegant, upright form. It features a clean cylindrical body and subtle control elements, exemplifying Rams’ ability to bring clarity and order to everyday appliances.",
+        year: "1971",
+        images: [hl7001, hl7002, hl7003, hl7004],
+        slug: "fan-hl70"
+    },
+    {
+        name: "Can DS1",
+        description: "Released in 1972, the DS1 is an electric can opener that integrates seamlessly into any kitchen. With its compact size and unobtrusive design, it embodies the principle that even the most utilitarian objects can be visually and functionally balanced.",
+        year: "1972",
+        images: [ds101, ds102, ds103, ds104, ds105, ds106, ds107],
+        slug: "can-ds1"
+    },
+    {
+        name: "Radio SK2/2",
+        description: "The SK2/2, introduced in 1955, is a classic tabletop radio that laid the groundwork for Rams’ later innovations. With a clear, rectangular form and rational layout, it reflects an early yet confident move toward what would become Braun’s signature aesthetic.",
+        year: "1955",
+        images: [sk201, sk202, sk203, sk204, sk205, sk206],
+        slug: "radio-sk2-2"
+    },
+    {
+        name: "Tonarmwaage",
+        description: "Designed in 1962, the Tonarmwaage is a precision tonearm scale used to calibrate the counterweight of record players. Its clean lines and technical exactness reflect Rams’ belief in honest, well-engineered tools that enhance the performance of audio equipment.",
+        year: "1962",
+        images: [tonar01, tonar02, tonar03, tonar04, tonar05],
+        slug: "tonarmwaage"
+    }
 ]
