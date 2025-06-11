@@ -137,6 +137,13 @@ type Product = {
 
 export const products: Product[] = [
     {
+        name: "Radio SK2/2",
+        description: "The SK2/2, introduced in 1955, is a classic tabletop radio that laid the groundwork for Rams’ later innovations. With a clear, rectangular form and rational layout, it reflects an early yet confident move toward what would become Braun’s signature aesthetic.",
+        year: "1955",
+        images: [sk201, sk202, sk203, sk204, sk205, sk206],
+        slug: "radio-sk2-2"
+    },
+    {
         name: "SK4 Phonosuper",
         description: "Designed together with Hans Gugelot in 1956 for Braun, is a record player with an integrated radio that revolutionized audio equipment design. Its metal and wood casing, along with an innovative transparent acrylic lid instead of the traditional fabric or wooden cover, earned it the nickname “Snow White’s Coffin.” This iconic design laid the foundation for minimalism in consumer electronics.",
         year: "1956",
@@ -144,53 +151,11 @@ export const products: Product[] = [
         slug: "sk4-phonousuper"
     },
     {
-       name: "T3 Transistor", 
-       description: "Designed in 1958 for Braun, is a portable radio that influenced the design of later electronic products. Its minimalist aesthetic, based on a rational grid and discreet buttons, optimizes functionality and visual clarity. Its simple yet precise design exemplifies Rams’ philosophy of “less, but better.”",
-       year: "1958",
-       images: [t301, t302, t303, t304, t305, t306],
-       slug: "t3-transistor"
-    },
-    {
-        name: "Portable Transistor TP1",
-        description: "Designed in 1959 for Braun, is a compact record player with an integrated radio. Its innovative and minimalist design combines functionality and aesthetics, featuring a modular structure that allows the speaker to be detached from the main body. It is a clear example of Rams’ rational and timeless approach to industrial design.",
-        year: "1959",
-        images: [tp101, tp102, tp103, tp104, tp105, tp106],
-        slug: "portable-transistor-tp1"
-    },
-    {
-        name: "601 Easy Chair",
-        description: "Designed for the company Vitsoe in 1960, it reflects Rams’ philosophy of functional and minimalist design. With a modular structure, its design stands out for clean lines, a low base, and ergonomic cushions that prioritize comfort without sacrificing timeless aesthetics.",
-        year: "1960",
-        images: [c60101, c60102, c60103, c60104, c60105, c60106, c60107, c60108],
-        slug: "601-easy-chair"
-    },
-    {
-        name: "Hair Dryer HLD4",
-        description: "Designed in 1970 for Braun, is a hair dryer that combines functionality, minimalist design, and a touch of fun. Its compact, ergonomic shape reflects Rams’ philosophy that design should be simple yet effective. Although minimalist, the HLD4 retains a playful character without sacrificing its design principles.",
-        year: "1970",
-        images: [hld401, hld402, hld403, hld404, hld405, hld406],
-        slug: "hair-dryer-hld4"
-    },
-    {
-        name: "Calculator ET66",
-        description: "Designed in 1987 for Braun, the ET66 calculator is one of the most iconic examples of Rams’ 'less, but better' approach. With its rounded edges, clear button layout, and minimalist aesthetic, it prioritizes usability and clarity. Its influence is so enduring that it served as the direct inspiration for the calculator app in Apple’s original iOS. The ET66 embodies timeless, functional design at its best.",
-        year: "1987",
-        images: [et6601, et6602, et6603],
-        slug: "calculator-et66"
-    },
-    {
-        name: "Audio 1",
-        description: "Designed in 1962 for Braun, the Audio 1 was one of the first modular hi-fi systems. With a sleek, horizontal layout, it allowed users to combine a radio tuner and amplifier in a single, elegant unit. Its clean lines and grid-based controls reflect Rams’ systematic and rational approach.",
-        year: "1962",
-        images: [a101, a102, a103, a104, a105],
-        slug: "audio-1"
-    },
-    {
-        name: "RT 20 Table Radio",
-        description: "Released in 1961, the RT 20 exemplifies Rams’ minimalist design principles. With a plain white surface, horizontal speaker grille, and simple dials, it strips the radio to its most essential components without compromising on functionality.",
-        year: "1961",
-        images: [rt2001, rt2002, rt2003, rt2004, rt2005],
-        slug: "rt-20-table-radio"
+        name: "T3 Transistor", 
+        description: "Designed in 1958 for Braun, is a portable radio that influenced the design of later electronic products. Its minimalist aesthetic, based on a rational grid and discreet buttons, optimizes functionality and visual clarity. Its simple yet precise design exemplifies Rams’ philosophy of “less, but better.”",
+        year: "1958",
+        images: [t301, t302, t303, t304, t305, t306],
+        slug: "t3-transistor"
     },
     {
         name: "L2 Speaker",
@@ -200,18 +165,11 @@ export const products: Product[] = [
         slug: "l2-speaker"
     },
     {
-        name: "ABR 21 Alarm Clock",
-        description: "A compact, efficient design from 1978 that exemplifies clarity and usability. Its rounded edges, legible numbers, and bright alarm indicator show Rams' commitment to user-centered design.",
-        year: "1978",
-        images: [abr2101, abr2102, abr2103, abr2104, abr2105, abr2106, abr2107],
-        slug: "abr-21-alarm-clock"
-    },
-    {
-        name: "TS 45 Control Unit",
-        description: "Part of the hi-fi system designed in the early 1970s, the TS 45 features a reduced layout of sliders and buttons, emphasizing intuitive control. Its logical arrangement makes it a classic in audio interface design.",
-        year: "1973",
-        images: [ts4501, ts4502, ts4503, ts4504, ts4505],
-        slug: "ts-45-control-unit"
+        name: "Portable Transistor TP1",
+        description: "Designed in 1959 for Braun, is a compact record player with an integrated radio. Its innovative and minimalist design combines functionality and aesthetics, featuring a modular structure that allows the speaker to be detached from the main body. It is a clear example of Rams’ rational and timeless approach to industrial design.",
+        year: "1959",
+        images: [tp101, tp102, tp103, tp104, tp105, tp106],
+        slug: "portable-transistor-tp1"
     },
     {
         name: "LE1 Electrostatic Speaker",
@@ -221,18 +179,25 @@ export const products: Product[] = [
         slug: "le1-electrostatic-speaker"
     },
     {
-        name: "Nizo S 56 Super 8 Camera",
-        description: "Designed in the 1960s, this camera for Braun brought Rams’ clarity and simplicity to the world of film. The Nizo series is highly collectible today and known for its streamlined, all-white body.",
-        year: "1968",
-        images: [nizo01, nizo02, nizo03, nizo04, nizo05],
-        slug: "nizo-s56-super8-camera"
+        name: "601 Easy Chair",
+        description: "Designed for the company Vitsoe in 1960, it reflects Rams’ philosophy of functional and minimalist design. With a modular structure, its design stands out for clean lines, a low base, and ergonomic cushions that prioritize comfort without sacrificing timeless aesthetics.",
+        year: "1960",
+        images: [c60101, c60102, c60103, c60104, c60105, c60106, c60107, c60108],
+        slug: "601-easy-chair"
     },
     {
-        name: "T1000 World Receiver",
-        description: "Introduced in 1963 by Braun, the T1000 was a high-end portable world radio. Its compact metallic case and organized control panel made it a masterpiece of functionality and international usability. The symmetrical layout and technical precision reflect Rams’ obsession with clarity and order.",
-        year: "1963",
-        images: [t100001, t100002, t100003, t100004, t100005, t100006],
-        slug: "t1000-world-receiver"
+        name: "RT 20 Table Radio",
+        description: "Released in 1961, the RT 20 exemplifies Rams’ minimalist design principles. With a plain white surface, horizontal speaker grille, and simple dials, it strips the radio to its most essential components without compromising on functionality.",
+        year: "1961",
+        images: [rt2001, rt2002, rt2003, rt2004, rt2005],
+        slug: "rt-20-table-radio"
+    },
+    {
+        name: "Audio 1",
+        description: "Designed in 1962 for Braun, the Audio 1 was one of the first modular hi-fi systems. With a sleek, horizontal layout, it allowed users to combine a radio tuner and amplifier in a single, elegant unit. Its clean lines and grid-based controls reflect Rams’ systematic and rational approach.",
+        year: "1962",
+        images: [a101, a102, a103, a104, a105],
+        slug: "audio-1"
     },
     {
         name: "D-47 Slide Projector",
@@ -242,32 +207,18 @@ export const products: Product[] = [
         slug: "d47-slide-projector"
     },
     {
-        name: "Aromatic CR3",
-        description: "Designed in 1979 for Braun, the Aromatic CR3 is a minimalist coffee grinder that emphasizes efficiency and clarity. With its compact cylindrical shape and intuitive interface, it reflects Rams’ idea that even small kitchen appliances should be thoughtfully designed and user-friendly.",
-        year: "1979",
-        images: [cr301, cr302, cr303, cr304, cr305],
-        slug: "aromatic-cr3"
+        name: "Tonarmwaage",
+        description: "Designed in 1962, the Tonarmwaage is a precision tonearm scale used to calibrate the counterweight of record players. Its clean lines and technical exactness reflect Rams’ belief in honest, well-engineered tools that enhance the performance of audio equipment.",
+        year: "1962",
+        images: [tonar01, tonar02, tonar03, tonar04, tonar05],
+        slug: "tonarmwaage"
     },
     {
-        name: "Clock BC17",
-        description: "The BC17 is a wall clock that embodies Rams’ approach to timekeeping: clear typography, minimal distraction, and precise functionality. While its release year is uncertain, its quiet design and bold readability made it a timeless piece in both homes and offices.",
-        year: "Unknown",
-        images: [bc1701, bc1702, bc1703, bc1704],
-        slug: "clock-bc17"
-    },
-    {
-        name: "Citromatic",
-        description: "Launched in 1975 by Braun, the Citromatic is an electric citrus juicer that simplifies daily rituals with functional elegance. Its clean form and ease of use make it a perfect example of Rams’ belief that good design makes a product understandable and useful.",
-        year: "1975",
-        images: [citro01, citro02, citro03, citro04],
-        slug: "citromatic"
-    },
-    {
-        name: "Table Lighter T4",
-        description: "Introduced in 1970, the T4 Table Lighter is a refined tabletop accessory designed with minimalist precision. Its cylindrical form and tactile finish offer a sculptural, almost architectural presence, elevating a common object to a thoughtful design statement.",
-        year: "1970",
-        images: [t401, t402, t403],
-        slug: "table-lighter-t4"
+        name: "T1000 World Receiver",
+        description: "Introduced in 1963 by Braun, the T1000 was a high-end portable world radio. Its compact metallic case and organized control panel made it a masterpiece of functionality and international usability. The symmetrical layout and technical precision reflect Rams’ obsession with clarity and order.",
+        year: "1963",
+        images: [t100001, t100002, t100003, t100004, t100005, t100006],
+        slug: "t1000-world-receiver"
     },
     {
         name: "Transistor T52",
@@ -275,6 +226,27 @@ export const products: Product[] = [
         year: "1964",
         images: [t5201, t5202, t5203, t5204, t5205, t5206],
         slug: "transistor-t52"
+    },
+    {
+        name: "Nizo S 56 Super 8 Camera",
+        description: "Designed in the 1960s, this camera for Braun brought Rams’ clarity and simplicity to the world of film. The Nizo series is highly collectible today and known for its streamlined, all-white body.",
+        year: "1968",
+        images: [nizo01, nizo02, nizo03, nizo04, nizo05],
+        slug: "nizo-s56-super8-camera"
+    },
+    {
+        name: "Hair Dryer HLD4",
+        description: "Designed in 1970 for Braun, is a hair dryer that combines functionality, minimalist design, and a touch of fun. Its compact, ergonomic shape reflects Rams’ philosophy that design should be simple yet effective. Although minimalist, the HLD4 retains a playful character without sacrificing its design principles.",
+        year: "1970",
+        images: [hld401, hld402, hld403, hld404, hld405, hld406],
+        slug: "hair-dryer-hld4"
+    },
+    {
+        name: "Table Lighter T4",
+        description: "Introduced in 1970, the T4 Table Lighter is a refined tabletop accessory designed with minimalist precision. Its cylindrical form and tactile finish offer a sculptural, almost architectural presence, elevating a common object to a thoughtful design statement.",
+        year: "1970",
+        images: [t401, t402, t403],
+        slug: "table-lighter-t4"
     },
     {
         name: "Fan HL70",
@@ -291,17 +263,45 @@ export const products: Product[] = [
         slug: "can-ds1"
     },
     {
-        name: "Radio SK2/2",
-        description: "The SK2/2, introduced in 1955, is a classic tabletop radio that laid the groundwork for Rams’ later innovations. With a clear, rectangular form and rational layout, it reflects an early yet confident move toward what would become Braun’s signature aesthetic.",
-        year: "1955",
-        images: [sk201, sk202, sk203, sk204, sk205, sk206],
-        slug: "radio-sk2-2"
+        name: "TS 45 Control Unit",
+        description: "Part of the hi-fi system designed in the early 1970s, the TS 45 features a reduced layout of sliders and buttons, emphasizing intuitive control. Its logical arrangement makes it a classic in audio interface design.",
+        year: "1973",
+        images: [ts4501, ts4502, ts4503, ts4504, ts4505],
+        slug: "ts-45-control-unit"
     },
     {
-        name: "Tonarmwaage",
-        description: "Designed in 1962, the Tonarmwaage is a precision tonearm scale used to calibrate the counterweight of record players. Its clean lines and technical exactness reflect Rams’ belief in honest, well-engineered tools that enhance the performance of audio equipment.",
-        year: "1962",
-        images: [tonar01, tonar02, tonar03, tonar04, tonar05],
-        slug: "tonarmwaage"
+        name: "Citromatic",
+        description: "Launched in 1975 by Braun, the Citromatic is an electric citrus juicer that simplifies daily rituals with functional elegance. Its clean form and ease of use make it a perfect example of Rams’ belief that good design makes a product understandable and useful.",
+        year: "1975",
+        images: [citro01, citro02, citro03, citro04],
+        slug: "citromatic"
+    },
+    {
+        name: "ABR 21 Alarm Clock",
+        description: "A compact, efficient design from 1978 that exemplifies clarity and usability. Its rounded edges, legible numbers, and bright alarm indicator show Rams' commitment to user-centered design.",
+        year: "1978",
+        images: [abr2101, abr2102, abr2103, abr2104, abr2105, abr2106, abr2107],
+        slug: "abr-21-alarm-clock"
+    },
+    {
+        name: "Aromatic CR3",
+        description: "Designed in 1979 for Braun, the Aromatic CR3 is a minimalist coffee grinder that emphasizes efficiency and clarity. With its compact cylindrical shape and intuitive interface, it reflects Rams’ idea that even small kitchen appliances should be thoughtfully designed and user-friendly.",
+        year: "1979",
+        images: [cr301, cr302, cr303, cr304, cr305],
+        slug: "aromatic-cr3"
+    },
+    {
+        name: "Calculator ET66",
+        description: "Designed in 1987 for Braun, the ET66 calculator is one of the most iconic examples of Rams’ 'less, but better' approach. With its rounded edges, clear button layout, and minimalist aesthetic, it prioritizes usability and clarity. Its influence is so enduring that it served as the direct inspiration for the calculator app in Apple’s original iOS. The ET66 embodies timeless, functional design at its best.",
+        year: "1987",
+        images: [et6601, et6602, et6603],
+        slug: "calculator-et66"
+    },
+    {
+        name: "Clock BC17",
+        description: "The BC17 is a wall clock that embodies Rams’ approach to timekeeping: clear typography, minimal distraction, and precise functionality. While its release year is uncertain, its quiet design and bold readability made it a timeless piece in both homes and offices.",
+        year: "Unknown",
+        images: [bc1701, bc1702, bc1703, bc1704],
+        slug: "clock-bc17"
     }
-]
+];
