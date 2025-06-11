@@ -1,16 +1,18 @@
 .nav-wrapper {
   position: fixed;
   inset: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100dvw;
+  height: 100dvh;
   z-index: 9999;
   pointer-events: none;
+  transform: translateZ(0);
 }
 
 .nav-container {
-  position: absolute;
+  position: fixed;
   left: 50%;
-  bottom: 2rem;
+  bottom: calc(env(safe-area-inset-bottom) + 2rem);
+  transform: translate(-50%, 0) translateZ(0);
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -50,11 +52,9 @@
 }
 
 @media (min-width: 1024px) {
-  .nav-container {
-    cursor: default;
-  }
 
   .nav-container a:hover {
     color: var(--link);
   }
+
 }

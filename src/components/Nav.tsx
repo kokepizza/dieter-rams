@@ -36,7 +36,7 @@ export default function Navigation() {
         }
 
         el.offsetHeight;
-        gsap.set(el, { xPercent: -50, x, y });
+        gsap.set(el, { x, y });
 
         Draggable.create(el, {
           type: 'x,y',
