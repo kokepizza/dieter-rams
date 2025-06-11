@@ -6,7 +6,8 @@ export default function Navigation() {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // sessionStorage
+    if (window.innerWidth < 1024) return;
+
     if (!sessionStorage.getItem('session-started')) {
       sessionStorage.setItem('session-started', 'true');
       localStorage.removeItem('nav-position');
@@ -20,7 +21,6 @@ export default function Navigation() {
       import('gsap/Draggable').then(({ default: Draggable }) => {
         gsap.registerPlugin(Draggable);
 
-        // position saved
         const saved = localStorage.getItem('nav-position');
         let x = 0;
         let y = 0;
@@ -35,7 +35,6 @@ export default function Navigation() {
           }
         }
 
-        el.offsetHeight;
         gsap.set(el, { x, y });
 
         Draggable.create(el, {
@@ -54,7 +53,6 @@ export default function Navigation() {
         });
 
         const handleResize = () => {
-          // Si no hay posición guardada, recentrar
           if (!localStorage.getItem('nav-position')) {
             const centerX = boundsEl.offsetWidth / 2 - el.offsetWidth / 2;
             const bottomY = boundsEl.offsetHeight - el.offsetHeight - 32;
