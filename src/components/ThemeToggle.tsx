@@ -16,7 +16,6 @@ export default function ThemeToggle() {
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
 
-    // Aplica el fondo al <html> y al <body>
     const html = document.documentElement;
     const body = document.body;
 
