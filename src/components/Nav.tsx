@@ -3,70 +3,81 @@ import '../styles/nav.css';
 
 export default function Navigation() {
   const navRef = useRef<HTMLDivElement>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const elmnt = navRef.current;
-    if (!elmnt) return;
+    // sessionStorage
+    if (!sessionStorage.getItem('session-started')) {
+      sessionStorage.setItem('session-started', 'true');
+      localStorage.removeItem('nav-position');
+    }
 
-    let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    const el = navRef.current;
+    const boundsEl = wrapperRef.current;
+    if (!el || !boundsEl) return;
 
-    const dragMouseDown = (e: MouseEvent | TouchEvent) => {
-      e.preventDefault();
-      const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
-      const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
+    import('gsap').then(({ default: gsap }) => {
+      import('gsap/Draggable').then(({ default: Draggable }) => {
+        gsap.registerPlugin(Draggable);
 
-      pos3 = clientX;
-      pos4 = clientY;
+        // position saved
+        const saved = localStorage.getItem('nav-position');
+        let x = 0;
+        let y = 0;
 
-      document.onmouseup = closeDragElement;
-      document.onmousemove = elementDrag;
-      document.ontouchend = closeDragElement;
-      document.ontouchmove = elementDrag;
-    };
+        if (saved) {
+          try {
+            const pos = JSON.parse(saved);
+            x = pos.x || 0;
+            y = pos.y || 0;
+          } catch {
+            console.warn('No se pudo parsear la posición del nav');
+          }
+        }
 
-    const elementDrag = (e: MouseEvent | TouchEvent) => {
-      e.preventDefault();
-      const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
-      const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
+        el.offsetHeight;
+        gsap.set(el, { x, y });
 
-      pos1 = pos3 - clientX;
-      pos2 = pos4 - clientY;
-      pos3 = clientX;
-      pos4 = clientY;
+        Draggable.create(el, {
+          type: 'x,y',
+          bounds: boundsEl,
+          inertia: true,
+          edgeResistance: 0.85,
+          dragClickables: true,
+          allowNativeTouchScrolling: false,
+          onDragEnd: function () {
+            localStorage.setItem(
+              'nav-position',
+              JSON.stringify({ x: this.x, y: this.y })
+            );
+          }
+        });
 
-      elmnt.style.top = (elmnt.offsetTop - pos2) + 'px';
-      elmnt.style.left = (elmnt.offsetLeft - pos1) + 'px';
-    };
+        const handleResize = () => {
+          // Si no hay posición guardada, recentrar
+          if (!localStorage.getItem('nav-position')) {
+            const centerX = boundsEl.offsetWidth / 2 - el.offsetWidth / 2;
+            const bottomY = boundsEl.offsetHeight - el.offsetHeight - 32;
+            gsap.set(el, { x: centerX, y: bottomY });
+          }
+        };
 
-    const closeDragElement = () => {
-      document.onmouseup = null;
-      document.onmousemove = null;
-      document.ontouchend = null;
-      document.ontouchmove = null;
-    };
-
-    elmnt.onmousedown = dragMouseDown;
-    elmnt.ontouchstart = dragMouseDown;
-
-    return () => {
-      elmnt.onmousedown = null;
-      elmnt.ontouchstart = null;
-    };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+      });
+    });
   }, []);
 
   return (
-    <div className="nav-container" ref={navRef} style={{
-      position: 'absolute',
-      top: '200px',
-      left: '50%',
-      transform: 'translateX(-50%)',
-      zIndex: 10
-    }}>
-      <a href="/">Products</a>
-      <a href="/awards">Awards</a>
-      <a href="/bio">Bio</a>
-      <div className="nav-handle">
-        <span></span><span></span><span></span><span></span>
+    <div className="nav-wrapper" ref={wrapperRef}>
+      <div className="nav-container" ref={navRef}>
+        <a href="/">Products</a>
+        <a href="/awards">Awards</a>
+        <a href="/bio">Bio</a>
+        <div className="nav-handle">
+          <span></span><span></span>
+          <span></span><span></span>
+        </div>
       </div>
     </div>
   );
