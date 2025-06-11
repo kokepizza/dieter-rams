@@ -35,7 +35,7 @@
 }
 
 .nav-handle {
-  display: grid;
+  display: none;
   grid-template-columns: repeat(2, 4px);
   grid-template-rows: repeat(2, 4px);
   gap: 3px;
@@ -54,6 +54,10 @@
 
   .nav-container a:hover {
     color: var(--link);
+  }
+
+  .nav-handle {
+    display: grid;
   }
 
 }
