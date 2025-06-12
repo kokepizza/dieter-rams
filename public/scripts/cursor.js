@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   function animate() {
-    dotX = lerp(dotX, mouseX, 0.16);
-    dotY = lerp(dotY, mouseY, 0.16);
+    dotX = lerp(dotX, mouseX, 0.35);
+    dotY = lerp(dotY, mouseY, 0.35);
     dot.style.left = `${dotX}px`;
     dot.style.top = `${dotY}px`;
 
