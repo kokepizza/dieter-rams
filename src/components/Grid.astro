@@ -7,23 +7,40 @@ import ProjectCard from "../components/ProjectCard.astro";
   .projects-grid {
     padding: 62px 1rem 6rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: repeat(1, 1fr);
     gap: 1rem;
+    align-items: end;
   }
 
-  /* @media (min-width: 640px) {
+  @media (min-width: 360px) {
     .projects-grid {
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 640px) {
     .projects-grid {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(3, 1fr);
     }
-  } */
+  }
+
+  @media (min-width: 900px) {
+    .projects-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .projects-grid {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }  
+
+  @media (min-width: 1500px) {
+    .projects-grid {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
 
 </style>
 

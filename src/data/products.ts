@@ -34,6 +34,7 @@ import hld406 from "../assets/hld4-6.jpg";
 import et6601 from "../assets/et66-1.jpg";
 import et6602 from "../assets/et66-2.jpg";
 import et6603 from "../assets/et66-3.jpg";
+import et6604 from "../assets/et66-4.jpg";
 import a101 from "../assets/a1-1.jpg";
 import a102 from "../assets/a1-2.jpg";
 import a103 from "../assets/a1-3.jpg";
@@ -294,7 +295,7 @@ export const products: Product[] = [
         name: "Calculator ET66",
         description: "Designed in 1987 for Braun, the ET66 calculator is one of the most iconic examples of Rams’ 'less, but better' approach. With its rounded edges, clear button layout, and minimalist aesthetic, it prioritizes usability and clarity. Its influence is so enduring that it served as the direct inspiration for the calculator app in Apple’s original iOS. The ET66 embodies timeless, functional design at its best.",
         year: "1987",
-        images: [et6601, et6602, et6603],
+        images: [et6601, et6602, et6603, et6604],
         slug: "calculator-et66"
     },
     {
