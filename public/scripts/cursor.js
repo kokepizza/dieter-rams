@@ -17,7 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
     mouseY = e.clientY;
 
     const el = document.elementFromPoint(mouseX, mouseY);
-    if (el && (el.tagName === 'A' || el.tagName === 'BUTTON')) {
+    if (
+      el &&
+      (el.closest('.hover-target') ||
+       el.closest('a') ||
+       el.closest('button'))
+    ) {
       dot.classList.add('hovered');
     } else {
       dot.classList.remove('hovered');

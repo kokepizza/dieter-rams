@@ -1,10 +1,95 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import aboutImg from "../assets/about.jpg";
 
 const pageTitle = "Dieter Rams - Biography";
 const pageDescription = "“Less, but better.” — The key principle of Dieter Rams, an advocate for functional, honest, and timeless design.";
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
+  <section class="bio-section">
+    <div class="bio-image-wrapper">
+      <Image src={aboutImg} alt="Dieter Rams retrato" />
+    </div>
+    <div class="bio-content">
+      <p>
+        <strong>Dieter Rams</strong> (born in Wiesbaden, Germany, 1932) is a legendary industrial designer whose ideas and products have shaped the way we think about design today. Best known for his work at <strong>Braun</strong> and <strong>Vitsœ</strong>, Rams created some of the most iconic products of the 20th century — simple, functional, and beautifully minimal.
+      </p>
+      <p>
+        At Braun, where he started in the 1950s and later became Head of Design, he helped define a timeless aesthetic that still feels modern today. Think clean lines, logical layouts, and a focus on what really matters. With Vitsœ, he designed the <strong>606 Universal Shelving System</strong>, a perfect example of his belief in long-lasting and adaptable design.
+      </p>
+      <p>
+        Rams also wrote down his design philosophy in what became the <strong><a href="https://www.amazon.com/Dieter-Rams-Principles-Good-Design/dp/3791387324" target="_blank">Ten Principles for Good Design</a></strong>. His main message? Good design is useful, honest, and as little design as possible. No extra fluff, no fake features — just things that work well and look good because of it.
+      </p>
+      <p>
+        His influence can be seen everywhere, especially in the work of Apple’s design team. If you’ve ever thought an iPhone felt “just right,” there’s a good chance Dieter Rams had something to do with it.
+      </p>
+      <p>
+        Beyond his designs, Rams has been vocal about the role of designers in a world full of overconsumption. He pushed for more sustainable, thoughtful design long before it became a trend. His life and legacy were captured in the 2018 documentary Rams by Gary Hustwit.
+      </p>
+    </div>
+  </section>
 
+  <style is:inline>
+    .bio-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5rem;
+      padding: 6rem 1rem;
+    }
+
+    .bio-image-wrapper {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      border-radius: .1rem;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .bio-content {
+      color: var(--text);
+    }
+
+    .bio-content p {
+      margin-bottom: 1rem;
+    }
+
+    .bio-content p a {
+      text-decoration: underline;
+      text-decoration-color: var(--link);
+    }
+
+    @media (min-width: 768px) {
+      .bio-section {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: relative;
+      }
+
+      .bio-image-wrapper {
+        width: 50%;
+        height: auto;
+      }
+
+      .bio-content {
+        position: fixed;
+        top: 6rem;
+        right: 1rem;
+        width: 45%;
+      }
+
+      .bio-content p {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
 </Layout>
