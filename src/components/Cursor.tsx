@@ -26,8 +26,8 @@ export default function Cursor() {
     };
 
     const loop = () => {
-      pos.current.x = lerp(pos.current.x, mouse.current.x, 0.3);
-      pos.current.y = lerp(pos.current.y, mouse.current.y, 0.3);
+      pos.current.x = lerp(pos.current.x, mouse.current.x, 0.5);
+      pos.current.y = lerp(pos.current.y, mouse.current.y, 0.5);
       dot.style.left = `${pos.current.x}px`;
       dot.style.top = `${pos.current.y}px`;
       requestAnimationFrame(loop);
