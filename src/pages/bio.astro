@@ -70,25 +70,33 @@ const pageDescription = "“Less, but better.” — The key principle of Dieter
       .bio-section {
         flex-direction: row;
         align-items: flex-start;
-        justify-content: flex-start;
-        position: relative;
+        justify-content: center;
+        gap: 3rem;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 6rem 2rem;
       }
 
       .bio-image-wrapper {
-        width: 50%;
+        width: 40%;
+        min-width: 280px;
+        max-width: 420px;
         height: auto;
+        flex-shrink: 0;
       }
 
       .bio-content {
-        position: fixed;
-        top: 6rem;
-        right: 1rem;
-        width: 45%;
+        width: 60%;
+        max-width: 600px;
+        position: static;
+        top: auto;
+        right: auto;
+        padding: 0;
       }
 
       .bio-content p {
-        font-size: 0.85rem;
-        margin-bottom: 1rem;
+        font-size: 1rem;
+        margin-bottom: 1.2rem;
       }
     }
   </style>
