@@ -81,6 +81,13 @@ table {
   transform: translate(-50%, -50%);
   transition: width 0.2s ease, height 0.2s ease;
   mix-blend-mode: difference;
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .cursor-dot {
+    display: block;
+  }
 }
 
 .cursor-dot.hovered {
