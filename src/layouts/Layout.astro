@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Nav from '../components/Nav';
+import Cursor from '../components/Cursor';
 
 const {
   title = "Dieter Rams",
@@ -26,15 +27,13 @@ const {
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   </head>
 
-  <body>
+  <body data-barba="wrapper">
+
+    <Cursor client:only="react" />
     <Header />
-    <Nav client:load/>
-    <main>
+    <Nav client:only="react"/>
+    <main data-barba="container" data-barba-namespace={Astro.url.pathname}>
       <slot />
     </main>
-
-    <script src="/scripts/card.js" defer></script>
-    <script src="/scripts/cursor.js" defer></script>
-    
   </body>
 </html>

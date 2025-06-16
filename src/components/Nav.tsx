@@ -7,14 +7,29 @@ export default function Navigation() {
   const navRef = useRef<HTMLDivElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
 
+  // ---------- Leer la posición guardada ANTES del render ----------
+  let initialX = 0;
+  let initialY = 0;
+
+  if (typeof window !== 'undefined') {
+    const saved = sessionStorage.getItem('nav-position');
+    if (saved) {
+      try {
+        const { x: sx = 0, y: sy = 0, ts = 0 } = JSON.parse(saved);
+        if (Date.now() - ts < EXPIRATION_MS) {
+          initialX = sx;
+          initialY = sy;
+        } else {
+          sessionStorage.removeItem('nav-position');
+        }
+      } catch {
+        console.warn('No se pudo parsear la posición del nav');
+      }
+    }
+  }
+
   useEffect(() => {
     if (window.innerWidth < 1024) return;
-
-    // Limpia la posición sólo al comienzo de la sesión
-    if (!sessionStorage.getItem('session-started')) {
-      sessionStorage.setItem('session-started', 'true');
-      localStorage.removeItem('nav-position');
-    }
 
     const el = navRef.current;
     const boundsEl = wrapperRef.current;
@@ -24,29 +39,10 @@ export default function Navigation() {
       const { default: Draggable } = await import('gsap/Draggable');
       gsap.registerPlugin(Draggable);
 
-      // ---------- leer posición guardada ----------
-      let x = 0;
-      let y = 0;
+      // Establecer posición inicial vía GSAP (por si hay cambios de layout)
+      gsap.set(el, { x: initialX, y: initialY });
 
-      const saved = localStorage.getItem('nav-position');
-      if (saved) {
-        try {
-          const { x: sx = 0, y: sy = 0, ts = 0 } = JSON.parse(saved);
-          // Sólo usamos la posición si no ha expirado
-          if (Date.now() - ts < EXPIRATION_MS) {
-            x = sx;
-            y = sy;
-          } else {
-            localStorage.removeItem('nav-position');
-          }
-        } catch {
-          console.warn('No se pudo parsear la posición del nav');
-        }
-      }
-
-      gsap.set(el, { x, y });
-
-      // ---------- Draggable ----------
+      // Crear draggable con límites
       Draggable.create(el, {
         type: 'x,y',
         bounds: boundsEl,
@@ -54,17 +50,23 @@ export default function Navigation() {
         edgeResistance: 0.85,
         dragClickables: true,
         allowNativeTouchScrolling: false,
+        onPress() {
+          window.dispatchEvent(new CustomEvent('nav-drag-start'));
+        },
+        onRelease() {
+          window.dispatchEvent(new CustomEvent('nav-drag-end'));
+        },
         onDragEnd() {
-          localStorage.setItem(
+          sessionStorage.setItem(
             'nav-position',
             JSON.stringify({ x: this.x, y: this.y, ts: Date.now() })
           );
         }
       });
 
-      // ---------- centrar al redimensionar si no hay posición ----------
+      // Centrar solo si no hay posición guardada
       const handleResize = () => {
-        if (!localStorage.getItem('nav-position')) {
+        if (!sessionStorage.getItem('nav-position')) {
           const centerX = boundsEl.offsetWidth / 2 - el.offsetWidth / 2;
           const bottomY = boundsEl.offsetHeight - el.offsetHeight - 32;
           gsap.set(el, { x: centerX, y: bottomY });
@@ -78,7 +80,13 @@ export default function Navigation() {
 
   return (
     <div className="nav-wrapper" ref={wrapperRef}>
-      <div className="nav-container" ref={navRef}>
+      <div
+        className="nav-container"
+        ref={navRef}
+        style={{
+          transform: `translate(${initialX}px, ${initialY}px)`, // Posición inicial inline para evitar salto
+        }}
+      >
         <a href="/">Products</a>
         <a href="/awards">Awards</a>
         <a href="/bio">Bio</a>
