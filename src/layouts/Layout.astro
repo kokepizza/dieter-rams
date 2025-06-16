@@ -27,12 +27,13 @@ const {
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   </head>
 
-  <body data-barba="wrapper">
+  <body>
 
-    <Cursor client:only="react" />
     <Header />
     <Nav client:only="react"/>
-    <main data-barba="container" data-barba-namespace={Astro.url.pathname}>
+    <Cursor client:only="react" />
+
+    <main>
       <slot />
     </main>
   </body>
