@@ -84,7 +84,7 @@ export default function Navigation() {
         className="nav-container"
         ref={navRef}
         style={{
-          transform: `translate(${initialX}px, ${initialY}px)`, // Posición inicial inline para evitar salto
+          transform: `translate(calc(-50% + ${initialX}px), ${initialY}px)`, // Posición inicial inline para evitar salto
         }}
       >
         <a href="/">Products</a>

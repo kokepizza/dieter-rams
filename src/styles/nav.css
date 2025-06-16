@@ -11,10 +11,7 @@
 .nav-container {
   position: fixed;
   left: 50%;
-  bottom: calc(env(safe-area-inset-bottom) + 2rem);
-  transform: translate(-50%, 0) translateZ(0);
-  cursor: grab;
-  user-select: none;
+  bottom: 2rem;
   pointer-events: auto;
   will-change: transform;
   display: flex;
