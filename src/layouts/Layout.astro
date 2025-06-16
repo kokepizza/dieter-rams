@@ -1,4 +1,5 @@
 ---
+import Preloader from '../components/Preloader';
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Nav from '../components/Nav';
@@ -28,11 +29,10 @@ const {
   </head>
 
   <body>
-
+    <Preloader client:only="react" />
     <Header />
     <Nav client:only="react"/>
     <Cursor client:only="react" />
-
     <main>
       <slot />
     </main>
