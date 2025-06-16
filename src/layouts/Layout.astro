@@ -26,6 +26,19 @@ const {
     <meta name="keywords" content="palabra, palabra, palabra" />
 
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+    <script is:inline>
+      (function() {
+        try {
+          const saved = localStorage.getItem("theme");
+          const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          const theme = saved || (prefersDark ? "dark" : "light");
+          document.documentElement.setAttribute("data-theme", theme);
+          document.documentElement.style.backgroundColor = theme === "dark" ? "#1D1D1B" : "#F5F5F5";
+          document.body.style.backgroundColor = theme === "dark" ? "#1D1D1B" : "#F5F5F5";
+        } catch (e) {}
+      })();
+    </script>
   </head>
 
   <body>
