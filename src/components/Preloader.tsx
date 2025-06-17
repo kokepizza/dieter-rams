@@ -29,7 +29,7 @@ const Preloader: React.FC = () => {
     const h1 = h1Ref.current;
 
     const tl = gsap.timeline({
-      defaults: { ease: 'power2.inOut', duration: 0.7 },
+      defaults: { ease: 'power2.inOut', duration: 0.5 },
       onComplete: () => {
         setIsHidden(true);
       },

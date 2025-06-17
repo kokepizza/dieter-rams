@@ -8,7 +8,6 @@ import Cursor from '../components/Cursor';
 const {
   title = "Dieter Rams",
   description = "“Less, but better.” — The key principle of Dieter Rams, an advocate for functional, honest, and timeless design.",
-  preloader = true,
 } = Astro.props;
 ---
 
@@ -43,7 +42,7 @@ const {
   </head>
 
   <body>
-    {preloader && <Preloader client:load />}
+    <Preloader client:load />
     <Header />
     <Nav client:only="react"/>
     <Cursor client:only="react" />

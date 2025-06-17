@@ -141,7 +141,7 @@ const nextProducts = Array.from({ length: 6 }, (_, i) =>
   }
 </style>
 
-<Layout preloader={false}>
+<Layout  title={product.name} description={product.description}>
   <article class="product-wrapper">
     <section class="product-meta">
       <div class="product-title">
