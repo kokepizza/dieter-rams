@@ -139,6 +139,24 @@ const nextProducts = Array.from({ length: 6 }, (_, i) =>
       padding: 0 1rem;
     }
   }
+
+  @media (min-width: 1500px) {
+    .product-meta * {
+      max-width: 700px;
+    }
+  }
+
+  @media (min-width: 1700px) {
+    .product-meta * {
+      max-width: 800px;
+    }
+  }
+
+  @media (min-width: 1900px) {
+    .product-meta * {
+      max-width: 1000px;
+    }
+  }
 </style>
 
 <Layout  title={product.name} description={product.description}>
