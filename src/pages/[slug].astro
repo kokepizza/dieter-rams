@@ -1,5 +1,5 @@
 ---
-import { products } from '../data/products.ts';
+import { products } from '../data/products';
 import Layout from '../layouts/Layout.astro';
 import { Image } from "astro:assets";
 import ProjectCard from '../components/ProjectCard.astro';
@@ -25,7 +25,6 @@ const nextProducts = Array.from({ length: 6 }, (_, i) =>
 ---
 
 <style>
-
   .product-wrapper {
     display: flex;
     flex-direction: column;
@@ -140,10 +139,9 @@ const nextProducts = Array.from({ length: 6 }, (_, i) =>
       padding: 0 1rem;
     }
   }
-
 </style>
 
-<Layout>
+<Layout preloader={false}>
   <article class="product-wrapper">
     <section class="product-meta">
       <div class="product-title">
